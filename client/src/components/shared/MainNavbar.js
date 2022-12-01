@@ -1,11 +1,53 @@
 import { Link } from 'react-router-dom';
+import { AuthConsumer } from '../../providers/AuthProvider';
 
-const MainNavbar = () => {
+const MainNavbar = ({ user, handleLogout}) => {
+  
+  const rightNavItems = () => {
+    // Links that show up if you are logged in
+    if (user) {
+      return (
+        <>
+        <Link to ='/area'>
+          <li>Area</li>
+        </Link>
+        <button onClick={() => handleLogout() }>
+          Logout
+        </button>
+        </>
+      )
+    } else {
+      // links that will show when you are not logged in
+      return (
+        <>
+          <Link to='/login'>
+            <li>Login</li>
+          </Link>
+          <Link to='/register'>
+            <li>Signup</li>
+          </Link>
+        </>
+      )
+    }
+  }
   return (
     <>
-
+      <nav>
+        <ul>
+          {/* links that will show if you logged in or not */}
+          <Link to='/'>
+            <li>Home</li>
+          </Link>
+          { rightNavItems()}
+        </ul>
+      </nav>
     </>
   )
 }
 
-export default MainNavbar
+const ConnectedMainNavbar = (props) => (
+  <AuthConsumer>
+    { value => <MainNavbar {...props} {...value}/>}
+  </AuthConsumer>
+)
+export default ConnectedMainNavbar;

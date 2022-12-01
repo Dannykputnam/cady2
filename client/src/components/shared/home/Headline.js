@@ -14,7 +14,7 @@ const Headline = () => (
         </Col>
         <Col>
         <p>
-          Easily navigate an areas inventory, document assets, monitor equipment lending. View from any web device.
+          Test test test
         </p>
         <Row>
           <Col>

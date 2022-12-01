@@ -11,9 +11,9 @@ const App = () => (
     <MainNavbar/>
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/Login' element={<Login />} />
-      <Route path='/Register' element={<Register />} />
-      <Route path='/Nomatch' element={<Nomatch />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/register' element={<Register />} />
+      <Route path='/*' element={<Nomatch />} />
     </Routes>
     <Footer />
   </>
