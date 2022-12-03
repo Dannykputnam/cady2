@@ -5,16 +5,19 @@ import Register from './components/auth/Register';
 import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
 import Footer from './components/shared/Footer';
+import FetchUser from './components/auth/FetchUser';
 
 const App = () => (
   <>
     <MainNavbar/>
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/*' element={<Nomatch />} />
-    </Routes>
+    <FetchUser>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/*' element={<Nomatch />} />
+      </Routes>
+    </FetchUser>
     <Footer />
   </>
 )
