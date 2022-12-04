@@ -6,6 +6,7 @@ import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
 import Footer from './components/shared/Footer';
 import FetchUser from './components/auth/FetchUser';
+import ProtectedRoute from './components/auth/ProtectedRoute'
 
 const App = () => (
   <>
@@ -13,6 +14,9 @@ const App = () => (
     <FetchUser>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/' element={<ProtectedRoute />} >
+          
+        </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/*' element={<Nomatch />} />
