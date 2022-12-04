@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { initMiddleware } from 'devise-axios';
 import  AuthProvider  from './providers/AuthProvider';
+import AreaProvider from './providers/AreaProvider'
 
 initMiddleware()
 
@@ -15,7 +16,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <AreaProvider>
+          <App />
+        </AreaProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>
