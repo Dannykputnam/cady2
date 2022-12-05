@@ -35,10 +35,14 @@ before_action :set_area, only: [:show, :update, :destroy]
   end
 
   private
-    params.require(:area).permit(:name, :address, :city, :country, :zip, :mcontact, :pic)
+  def area_params
+    params.require(:area).permit(:name)
   end
 
   def set_area
     @area = Area.find(params[:id])
   end
 end
+
+
+# :address, :city, :country, :zip, :mcontact, :pic

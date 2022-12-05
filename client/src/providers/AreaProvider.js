@@ -7,7 +7,7 @@ export const AreaContext = React.createContext();
 export const AreaConsumer = AreaContext.Consumer;
 
 const AreaProvider = ({ children}) => {
-  const [areas, setAreas] = useState ({})
+  const [areas, setAreas] = useState ([])
   const [errors, setErrors] = useState(null)
   const navigate =useNavigate()
 
@@ -43,6 +43,7 @@ const AreaProvider = ({ children}) => {
         return c
       })
       setAreas(newUpdatedAreas)
+      navigate('/areas')
     })
   }
 

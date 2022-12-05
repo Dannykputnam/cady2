@@ -10,7 +10,7 @@ const Areas = ({ areas, getAllAreas}) => {
 
   return (
   <>
-    <h1> All Studios</h1>
+    <h1 className="text-center"> All Studios</h1>
     <AreaList 
     areas={areas}/>
   </>
