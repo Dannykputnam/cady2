@@ -8,6 +8,7 @@ import Footer from './components/shared/Footer';
 import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import Areas from './components/areas/Areas';
+import AreaForm from './components/areas/AreaForm';
 
 const App = () => (
   <>
@@ -18,6 +19,7 @@ const App = () => (
         <Route path='/' element={<Home />} />
         <Route path='/' element={<ProtectedRoute />} >
         <Route path='/areas' element={<Areas />} />
+        <Route path='/:id/updateArea' element={<AreaForm />} />
           
         </Route>
         <Route path='/login' element={<Login />} />

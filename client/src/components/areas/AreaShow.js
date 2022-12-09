@@ -1,8 +1,9 @@
 import {Card, Modal, Button, Container, Row,Col, Image} from 'react-bootstrap'
 import { AreaConsumer } from '../../providers/AreaProvider'
 import { useState } from 'react'
+import { Link} from 'react-router-dom'
 
-const AreaShow = ({name, address, city, country, zip, mcontact, pic}) => {
+const AreaShow = ({id, name, address, city, country, zip, mcontact, pic, deleteArea}) => {
   const [showing, setShow] = useState(false)
   
   return (
@@ -26,10 +27,11 @@ const AreaShow = ({name, address, city, country, zip, mcontact, pic}) => {
             <Modal.Title>{name}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+                <h1 className='text-center'>Is this your studio?</h1>
+                <br />
             <Container>
               <Row>
                 <Col>
-                <h1>Is this your studio?</h1>
                 <Row>
                 Studio Contact: {mcontact}
                 </Row> 
@@ -45,9 +47,20 @@ const AreaShow = ({name, address, city, country, zip, mcontact, pic}) => {
                 <Row>
                 Postal Code: {zip}
                 </Row>
-                <Button>Continue</Button>
-                <Button>Edit</Button>
-                <Button>Remove</Button>
+                <br />
+                <Button variant="outline-secondary" size="lg">Continue</Button>
+                <br />
+                <Link 
+                  to={`/${id}/updateArea`}
+                  state={{name, address, city, country, zip, mcontact, pic}}
+                  > 
+                <Button variant="outline-secondary"
+                >Edit</Button>
+                </Link>
+                <br />
+                <Button variant="outline-secondary"
+                onClick={() => deleteArea(id)}
+                >Remove</Button>
                 </Col>
                 <Col>
                   <Image src={pic} width='100px'/>
