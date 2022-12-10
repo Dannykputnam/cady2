@@ -4,7 +4,7 @@ import { AreaConsumer } from '../../providers/AreaProvider';
 import AreaForm from './AreaForm';
 import { Button, Modal} from 'react-bootstrap';
 
-const Areas = ({ areas, getAllAreas}) => {
+const Areas = ({ areas, getAllAreas, updateArea}) => {
   const [adding, setAdd] = useState(false)
 
   useEffect( () =>{
@@ -13,7 +13,6 @@ const Areas = ({ areas, getAllAreas}) => {
 
   return (
   <>
-  
 
       <Modal show={adding} onHide={() => setAdd(false)}>
           <div className="text-center">

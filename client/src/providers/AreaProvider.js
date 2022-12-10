@@ -28,7 +28,7 @@ const AreaProvider = ({ children}) => {
       .catch(err => {
         setErrors({
           variant: 'danger',
-          msg: err.response.data.errors.full_messages[0]
+          msg: Object.keys(err.response.data.errors)[0] + " " + Object.values(err.response.data.errors)[0][0]
       })
     })
   }
@@ -44,6 +44,12 @@ const AreaProvider = ({ children}) => {
       })
       setAreas(newUpdatedAreas)
       navigate('/areas')
+    })
+      .catch(err => {
+        setErrors({
+          variant: 'danger',
+          msg: Object.keys(err.response.data.errors)[0] + " " + Object.values(err.response.data.errors)[0][0]
+      })
     })
   }
 
