@@ -9,6 +9,7 @@ import FetchUser from './components/auth/FetchUser';
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import Areas from './components/areas/Areas';
 import AreaForm from './components/areas/AreaForm';
+import Assets from './components/assets/Assets';
 
 const App = () => (
   <>
@@ -20,6 +21,9 @@ const App = () => (
         <Route path='/' element={<ProtectedRoute />} >
         <Route path='/areas' element={<Areas />} />
         <Route path='/:id/updateArea' element={<AreaForm />} />
+        <Route path='/:areaId/updateArea' element={<AreaForm />} />
+        <Route path='/:areaId/assets' element={<Assets />} />
+
           
         </Route>
         <Route path='/login' element={<Login />} />

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { AuthConsumer } from '../../providers/AuthProvider';
 
-const MainNavbar = ({ user, handleLogout}) => {
+
+
+const MainNavbar = ({ user, handleLogout, areaId }) => {
   
   const rightNavItems = () => {
     // Links that show up if you are logged in
@@ -10,6 +12,9 @@ const MainNavbar = ({ user, handleLogout}) => {
         <>
         <Link to ='/areas'>
           <li>Area</li>
+        </Link>
+        <Link to ={`${areaId}/contacts`}>
+          <li>Contacts</li>
         </Link>
         <button onClick={() => handleLogout() }>
           Logout

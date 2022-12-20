@@ -4,7 +4,7 @@ import {useNavigate} from 'react-router-dom'
 
 export const AssetContext = React.createContext();
 
-export const AssetConsumer = AssetConext.Consumer;
+export const AssetConsumer = AssetContext.Consumer;
 
 const AssetProvider = ({ children }) => {
   const [assets, setAssets] = useState([])
@@ -23,7 +23,7 @@ const AssetProvider = ({ children }) => {
   }
 
   const addAsset = (areaId, asset) => {
-    axios.post(`/api/areas/${areaId}/assets`, { area })
+    axios.post(`/api/areas/${areaId}/assets`, { asset })
       .then ( res => setAssets([...assets, res.data]))
       .catch(err => {
         setErrors({

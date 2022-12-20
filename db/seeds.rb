@@ -1,13 +1,29 @@
-Asset.destroy_all
+1.times do 
+  name = Faker::Creature::Cat.name
+  area = Area.create(
+    name: name, 
+    address: Faker::Creature::Cat.breed, 
+    city: Faker::Creature::Cat.registry, 
+    country: Faker::Creature::Cat.breed, 
+    zip: '84065', 
+    mcontact: name, 
+    pic: "https://home.cady.com/wp-content/uploads/2020/06/Blog-header-960x636.jpg",
+  )
 
-Asset.create([{
-   name: "Device Name",
-   description: "blah blah blah",
-   barcode: "12345" ,
-   price: "400.00",
-   pdate: "12/22/22",
-   status: "Available",
-   img: "https://i.pinimg.com/736x/d8/5e/93/d85e934fc6ae12596f541e16cd889f6a--camera-icon-motion-graphics.jpg",
-   area_id: "2"
-   }])
- 
+  5.times do 
+    Asset.create(
+      name: name, 
+      description: Faker::Tea.variety, 
+      barcode: Faker::Tea.variety, 
+      price: '1000.00', 
+      pdate: Faker::Date.forward(days: 23), 
+      status: 'available', 
+      img: "https://home.cady.com/wp-content/uploads/2020/06/Blog-header-960x636.jpg",
+      area_id: area.id
+    )
+  end
+end 
+
+
+puts Area.all.count 
+puts Asset.all.count
