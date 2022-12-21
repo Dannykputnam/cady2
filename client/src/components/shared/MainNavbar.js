@@ -10,12 +10,12 @@ const MainNavbar = ({ user, handleLogout, areaId }) => {
     if (user) {
       return (
         <>
-        <Link to ='/areas'>
+        {/* <Link to ='/areas'>
           <li>Area</li>
         </Link>
         <Link to ={`${areaId}/contacts`}>
           <li>Contacts</li>
-        </Link>
+        </Link> */}
         <button onClick={() => handleLogout() }>
           Logout
         </button>
@@ -40,9 +40,9 @@ const MainNavbar = ({ user, handleLogout, areaId }) => {
       <nav>
         <ul>
           {/* links that will show if you logged in or not */}
-          <Link to='/'>
+          {/* <Link to='/'>
             <li>Home</li>
-          </Link>
+          </Link> */}
           { rightNavItems()}
         </ul>
       </nav>
