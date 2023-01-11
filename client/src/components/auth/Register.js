@@ -1,9 +1,9 @@
 import { AuthConsumer } from "../../providers/AuthProvider";
 import { useState } from "react";
+import Flash from "../shared/Flash";
 
-
-const Register = ({ handleRegister}) => {
-  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '' })
+const Register = ({ handleRegister, errors, setErrors}) => {
+  const [user, setUser] = useState({ email: '', password: '', passwordConfirmation: '', fname: '', lname: '' })
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,8 +16,15 @@ const Register = ({ handleRegister}) => {
 
   return (
     <>
+    { errors ?
+    <Flash
+      variant={errors.variant}
+      msg={errors.msg}
+      setErrors={setErrors}
+      />
+    :null}
    
-      <h1>Register</h1>
+      <h1>Register New User</h1>
       <form onSubmit={handleSubmit}>
         <label>Email</label>
         <input
@@ -27,6 +34,22 @@ const Register = ({ handleRegister}) => {
           onChange={ (e) => setUser({ ...user, email: e.target.value })}
           required
           placeholder="Email"
+        />
+        <label>First Name</label>
+        <input
+          name='fname'
+          value={user.fname}
+          onChange={ (e) => setUser({ ...user, fname: e.target.value })}
+          required
+          placeholder="First Name"
+        />
+        <label>Last Name</label>
+        <input
+          name='lname'
+          value={user.lname}
+          onChange={ (e) => setUser({ ...user, lname: e.target.value })}
+          required
+          placeholder="Last Name"
         />
 
         <label>Password</label>
