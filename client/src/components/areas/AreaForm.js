@@ -2,8 +2,9 @@ import {useState, useEffect} from 'react';
 import {AreaConsumer} from '../../providers/AreaProvider'
 import {Button, Form} from 'react-bootstrap'
 import {useParams, useLocation} from 'react-router-dom'
+import Flash from '../shared/Flash'
 
-const AreaForm = ({addArea, setAdd, updateArea}) => {
+const AreaForm = ({addArea, setAdd, updateArea, errors, setErrors}) => {
 const [area, setArea] = useState({name: '', address: '', city: '', country: '', zip: '', mcontact: '', pic: ''})
 const {id } = useParams();
 const location = useLocation();
@@ -28,6 +29,13 @@ const handleSubmit = (e) => {
 
   return (
   <>
+   { errors ?
+      <Flash
+        variant={errors.variant}
+        msg={errors.msg}
+        setErrors={setErrors}
+        />
+      :null}
     <Form onSubmit={handleSubmit}>
       <Form.Group >
         <Form.Label >Studio Name</Form.Label>

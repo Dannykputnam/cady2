@@ -48,7 +48,9 @@ const AreaShow = ({id, name, address, city, country, zip, mcontact, pic, deleteA
                 Postal Code: {zip}
                 </Row>
                 <br />
-                <Button variant="outline-secondary" size="lg">Continue</Button>
+                <Link to ={`/${id}/assets`}>
+                  <Button variant="outline-secondary" size="lg">Continue</Button>
+                </Link>
                 <br />
                 <Link 
                   to={`/${id}/updateArea`}

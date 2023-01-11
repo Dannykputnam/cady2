@@ -1,14 +1,29 @@
-i = 1 
-10.times do |area|
- Area.create!(
-    name: 'name',
-    address: "12345 fake street",
-    city: "here",
-    country: "here",
-    zip: "0000",
-    mcontact: 'name',
-    pic: 'data:image/png;base64,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',
+1.times do 
+  name = Faker::Creature::Cat.name
+  area = Area.create(
+    name: name, 
+    address: Faker::Creature::Cat.breed, 
+    city: Faker::Creature::Cat.registry, 
+    country: Faker::Creature::Cat.breed, 
+    zip: '84065', 
+    mcontact: name, 
+    pic: "https://home.cady.com/wp-content/uploads/2020/06/Blog-header-960x636.jpg",
   )
-end
 
-  puts Area.all.count
+  5.times do 
+    Asset.create(
+      name: name, 
+      description: Faker::Tea.variety, 
+      barcode: Faker::Tea.variety, 
+      price: '1000.00', 
+      pdate: Faker::Date.forward(days: 23), 
+      status: 'available', 
+      img: "https://home.cady.com/wp-content/uploads/2020/06/Blog-header-960x636.jpg",
+      area_id: area.id
+    )
+  end
+end 
+
+
+puts Area.all.count 
+puts Asset.all.count
