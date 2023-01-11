@@ -8,7 +8,7 @@ const MainNavbar = ({ user, handleLogout}) => {
     if (user) {
       return (
         <>
-        <Link to ='/area'>
+        <Link to ='/areas'>
           <li>Area</li>
         </Link>
         <button onClick={() => handleLogout() }>
