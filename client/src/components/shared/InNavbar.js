@@ -8,7 +8,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { AreaConsumer } from "../../providers/AreaProvider";
 import { Link, useParams} from 'react-router-dom';
 import MainNavbar from './MainNavbar';
-import AssetNav from '../assets/AssetNav';
+import Navb from './Navb';
 
 
 
@@ -42,11 +42,11 @@ const InNavbar = ( user, handleLogout, ) => {
                   >
                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                      <AssetNav/>
+                      <Navb/>
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                      <MainNavbar />
+                      <Nav />
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>

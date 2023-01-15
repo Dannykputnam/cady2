@@ -12,31 +12,33 @@ import Areas from './components/areas/Areas';
 import AreaForm from './components/areas/AreaForm';
 import Assets from './components/assets/Assets';
 import AssetNav from './components/assets/AssetNav';
+import Layout from './components/shared/Layout';
+
 
 const App = () => (
   <>
+      
         <InNavbar/>
     {/* <MainNavbar/> */}
     <FetchUser>
-        
       <>
       <Routes>
+        <Route element={<Layout />}>
         <Route path='/' element={<Home />} />
         <Route path='/' element={<ProtectedRoute />} >
         <Route path='/areas' element={<Areas />} />
         <Route path='/:id/updateArea' element={<AreaForm />} />
         <Route path='/:areaId/updateArea' element={<AreaForm />} />
         <Route path='/:areaId/assets' element={<Assets />} />
-        <Route path='/:areaId/assetnav' element={<AssetNav />} />
-
-          
+        <Route path='/:areaId/assetnav' element={<AssetNav />} />          
+        </Route>
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/*' element={<Nomatch />} />
       </Routes>
       </>
-    </FetchUser>
+    </FetchUser> 
     <Footer />
   </>
 )
