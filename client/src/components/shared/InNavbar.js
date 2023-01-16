@@ -35,18 +35,18 @@ const InNavbar = ( user, handleLogout, ) => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/">Home</Nav.Link>
-                  <Link to="/areas">Areas</Link>
+                  <MainNavbar></MainNavbar>
                   <NavDropdown
                     title="Dropdown"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                      <Navb/>
+                     
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                      <Nav />
+                     
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>

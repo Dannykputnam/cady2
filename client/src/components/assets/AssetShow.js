@@ -1,7 +1,7 @@
 import { ListGroup, Row, Col, Container, Button, Modal, Image} from 'react-bootstrap';
 import {useState } from 'react';
 
-const AssetShow = ({ id, name, description, barcode, price, pdate, status, img}) => {
+const AssetShow = ({ id, name, description, barcode, price, pdate, status, img, category}) => {
   const [showing, setShow] =useState(false)
   return (
    <>
@@ -42,6 +42,12 @@ const AssetShow = ({ id, name, description, barcode, price, pdate, status, img})
                   </p>
                   <p>
                      Purchase Date: {pdate}
+                  </p>
+                  <p>
+                    Category: {category}
+                  </p>
+                  <p>
+                    Status: {status}
                   </p>
                   <p>
                     Status: {status}

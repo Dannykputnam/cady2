@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AuthConsumer } from '../../providers/AuthProvider';
-
+import Nav from 'react-bootstrap/Nav';
 
 
 const MainNavbar = ({ user, handleLogout, areaId }) => {
@@ -16,7 +16,10 @@ const MainNavbar = ({ user, handleLogout, areaId }) => {
         <Link to ={`${areaId}/contacts`}>
           <li>Contacts</li>
         </Link> */}
-        <button onClick={() => handleLogout() }>
+         <Nav.Link href="/areas">Areas</Nav.Link>
+        <br />
+        <br />
+        <button type="button" class="btn btn-dark" onClick={() => handleLogout() }>
           Logout
         </button>
         </>

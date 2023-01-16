@@ -23,14 +23,15 @@ const App = () => (
     <FetchUser>
       <>
       <Routes>
-        <Route element={<Layout />}>
         <Route path='/' element={<Home />} />
         <Route path='/' element={<ProtectedRoute />} >
         <Route path='/areas' element={<Areas />} />
         <Route path='/:id/updateArea' element={<AreaForm />} />
         <Route path='/:areaId/updateArea' element={<AreaForm />} />
+        <Route element={<Layout />}>
         <Route path='/:areaId/assets' element={<Assets />} />
-        <Route path='/:areaId/assetnav' element={<AssetNav />} />          
+        <Route path='/:areaId/assetnav' element={<AssetNav />} /> 
+                 
         </Route>
         </Route>
         <Route path='/login' element={<Login />} />

@@ -6,9 +6,29 @@ const AssetNav = ({}) => {
  
   return (
     <>
-        <Link to ={`${areaId}/contacts`}>
-        <li>Assets!</li>
+  <ul class="nav justify-content-center">
+  <li class="nav-item">
+    {/* <a class="nav-link active" aria-current="page" href="#">Active</a> */}
+        <Link class="nav-link active" aria-current="page" to ={`${areaId}/assets`}>
+        <li>Assets</li>
         </Link>
+  </li>
+  <li class="nav-item">
+    {/* <a class="nav-link" href="#">Link</a> */}
+        <Link class="nav-link" to ={`${areaId}/contacts`}>
+        <li>Contacts</li>
+        </Link>
+  </li>
+  <li class="nav-item">
+    {/* <a class="nav-link" href="#">Link</a> */}
+        <Link class="nav-link"  to ={`${areaId}/sets`}>
+        <li>Set Builder</li>
+        </Link>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled">Disabled</a>
+  </li>
+</ul>
     </>
   )
 }
@@ -19,6 +39,8 @@ const ConnectedAssetNav = (props) => (
     { value => <AssetNav {...props} {...value} />}
   </AssetConsumer>
 )
+
+
 
 export default ConnectedAssetNav;
 
